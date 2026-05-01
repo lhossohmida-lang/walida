@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | Walida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Login Section -->
+    <div class="admin-wrapper" id="login-section">
+        <div class="login-card">
+            <div class="login-icon">🔐</div>
+            <h2>لوحة التحكم</h2>
+            <p class="subtitle">سجّل دخولك للوصول إلى لوحة الإدارة</p>
+
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" class="form-input" placeholder="admin@walida.com">
+            </div>
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password" class="form-input" placeholder="••••••••">
+            </div>
+
+            <button id="login-btn" class="btn-primary">تسجيل الدخول</button>
+            <p style="margin-top: 1rem;"><a href="index.html" style="font-size: 0.85rem;">→ العودة للمتجر</a></p>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboard-section" style="display: none;">
+
+        <!-- Dashboard Header -->
+        <header class="site-header">
+            <div class="header-inner">
+                <div class="logo">
+                    <div class="logo-icon">✦</div>
+                    <span>Walida</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="index.html">المتجر</a>
+                    <button id="logout-btn" class="btn-danger">تسجيل الخروج</button>
+                </nav>
+            </div>
+        </header>
+
+        <div class="dashboard">
+
+            <div class="dash-header">
+                <h1>مرحباً بك في <span>لوحة التحكم</span></h1>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-icon">👗</div>
+                    <div class="stat-value" id="total-products">0</div>
+                    <div class="stat-label">عدد المنتجات</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-value" id="total-orders">0</div>
+                    <div class="stat-label">الطلبات</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-value" id="total-revenue">0</div>
+                    <div class="stat-label">الإيرادات (دج)</div>
+                </div>
+            </div>
+
+            <!-- Upload Panel -->
+            <div class="panel">
+                <h3 class="panel-title">👗 رفع فستان جديد</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dress-name">اسم الفستان</label>
+                        <input type="text" id="dress-name" class="form-input" placeholder="مثال: كاراكو عاصمي">
+                    </div>
+                    <div class="form-group">
+                        <label for="dress-price">السعر (دج)</label>
+                        <input type="number" id="dress-price" class="form-input" placeholder="مثال: 25000">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dress-desc">وصف الفستان (اختياري)</label>
+                    <input type="text" id="dress-desc" class="form-input" placeholder="وصف مختصر...">
+                </div>
+
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-icon">📁</div>
+                    <p>اضغط هنا أو اسحب صورة الفستان</p>
+                    <div class="file-name" id="file-name-display"></div>
+                    <input type="file" id="dress-image" accept="image/*" style="display:none;">
+                </div>
+                <img id="image-preview" class="img-preview" style="display:none;">
+
+                <button id="upload-btn" class="btn-primary">رفع المنتج للمتجر</button>
+            </div>
+
+            <!-- Products Table -->
+            <div class="panel">
+                <h3 class="panel-title">📋 قائمة المنتجات</h3>
+                <div class="table-wrapper">
+                    <table class="data-table" id="products-table">
+                        <thead>
+                            <tr>
+                                <th>الصورة</th>
+                                <th>الاسم</th>
+                                <th>السعر</th>
+                                <th>التاريخ</th>
+                                <th>إجراء</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-tbody">
+                            <!-- Rows injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="panel">
+                <h3 class="panel-title">📦 الطلبات والمبيعات</h3>
+                <div class="table-wrapper">
+                    <table class="data-table" id="orders-table">
+                        <thead>
+                            <tr>
+                                <th>الفستان</th>
+                                <th>اسم الزبون</th>
+                                <th>الهاتف</th>
+                                <th>الحالة</th>
+                                <th>التاريخ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orders-tbody">
+                            <!-- Rows injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
