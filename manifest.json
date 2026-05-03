@@ -1,0 +1,26 @@
+{
+  "name": "وليدة - لتصميم الرشمات وطرزها",
+  "short_name": "وليدة",
+  "description": "Walida — تصميم الرشمات وطرزها",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#d4a853",
+  "orientation": "portrait-primary",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["shopping", "lifestyle"]
+}

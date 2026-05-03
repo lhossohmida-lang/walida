@@ -60,14 +60,8 @@ async function loadProducts() {
           <img src="${data.imageUrl}" alt="${data.name}" loading="lazy">
           ${data.badge ? `<span class="badge">${data.badge}</span>` : ''}
           <div class="card-overlay">
-            <div class="card-body">
-              <h3>${data.name}</h3>
-              ${data.description ? `<p class="card-desc">${data.description}</p>` : ''}
-              <div class="price">${formatPrice(data.price)} <small>دج</small></div>
-            </div>
-            <button class="order-btn" onclick="window.open('https://instagram.com/', '_blank')">
-              📩 اطلبي الآن عبر إنستغرام
-            </button>
+            <h3>${data.name}</h3>
+            <div class="price">${formatPrice(data.price)} <small>دج</small></div>
           </div>
         </div>
       `;

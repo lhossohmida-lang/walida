@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <circle cx="256" cy="256" r="256" fill="#0a0a0f"/>
+  <!-- Outer gold ring -->
+  <circle cx="256" cy="256" r="238" fill="none" stroke="#d4a853" stroke-width="3"/>
+  <!-- Blue ornamental band -->
+  <circle cx="256" cy="256" r="224" fill="none" stroke="#1e4a8a" stroke-width="18"/>
+  <!-- Inner gold ring -->
+  <circle cx="256" cy="256" r="212" fill="none" stroke="#d4a853" stroke-width="2.5"/>
+  <!-- Decorative dots -->
+  <circle cx="256" cy="44"  r="5" fill="#d4a853"/>
+  <circle cx="256" cy="468" r="5" fill="#d4a853"/>
+  <circle cx="44"  cy="256" r="5" fill="#d4a853"/>
+  <circle cx="468" cy="256" r="5" fill="#d4a853"/>
+  <circle cx="113" cy="113" r="4" fill="#d4a853"/>
+  <circle cx="399" cy="113" r="4" fill="#d4a853"/>
+  <circle cx="113" cy="399" r="4" fill="#d4a853"/>
+  <circle cx="399" cy="399" r="4" fill="#d4a853"/>
+  <!-- White inner circle -->
+  <circle cx="256" cy="256" r="196" fill="#ffffff"/>
+  <!-- Walida script text -->
+  <text x="256" y="272"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="100"
+        font-style="italic"
+        font-weight="bold"
+        fill="#1a1a2e">walida</text>
+</svg>

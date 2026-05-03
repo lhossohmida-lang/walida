@@ -96,6 +96,14 @@ img { max-width: 100%; display: block; }
   gap: 10px;
 }
 
+.logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .logo-icon {
   width: 40px;
   height: 40px;
@@ -197,59 +205,59 @@ img { max-width: 100%; display: block; }
   animation: fadeInUp 0.6s ease 0.2s both;
 }
 
-/* ========== Notice Board ========== */
-.notice-board {
+/* ========== Contact Bar ========== */
+.contact-bar {
   max-width: 900px;
   margin: -2rem auto 3rem;
   position: relative;
   z-index: 3;
-  background: var(--bg-glass);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 168, 83, 0.2);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem 2.5rem;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
   text-align: center;
-  box-shadow: var(--shadow-gold);
 }
 
-.notice-board .notice-icon {
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
+.contact-bar .contact-text {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-.notice-board h3 {
-  color: var(--gold);
-  font-size: 1.2rem;
-  margin-bottom: 0.8rem;
-}
-
-.notice-board p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.9;
-}
-
-.notice-board p strong { color: var(--text-primary); }
-
-.instagram-btn {
+.fb-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 1.2rem;
-  padding: 12px 28px;
-  background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);
   color: #fff;
+  font-size: 0.9rem;
   font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 50px;
+  text-decoration: none;
   transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
 }
 
-.instagram-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
+.fb-link:hover { color: #fff; transform: translateY(-2px); }
+
+.fb-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: #1877f2;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: var(--transition);
   color: #fff;
+}
+
+.fb-link:hover .fb-circle {
+  background: #166fe5;
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.5);
 }
 
 /* ========== Section Titles ========== */
@@ -348,52 +356,23 @@ img { max-width: 100%; display: block; }
   transform: translateY(0);
 }
 
-.product-card .card-body { margin-bottom: 0.8rem; }
-
-.product-card .card-body h3 {
-  font-size: 1.05rem;
+.card-overlay h3 {
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
-.product-card .card-body .price {
+.card-overlay .price {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--gold);
 }
 
-.product-card .card-body .price small {
+.card-overlay .price small {
   font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: 400;
-}
-
-.product-card .card-body .card-desc {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  margin-top: 0.4rem;
-}
-
-.order-btn {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-  color: var(--bg-dark);
-  font-weight: 700;
-  font-size: 0.9rem;
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: var(--transition);
-  text-align: center;
-  font-family: var(--font-main);
-}
-
-.order-btn:hover {
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
-  transform: translateY(-1px);
 }
 
 /* ========== Loading Skeleton ========== */
@@ -770,7 +749,7 @@ img { max-width: 100%; display: block; }
   .logo { font-size: 1.4rem; }
   .nav-links a { font-size: 0.85rem; padding: 4px 8px; }
   .hero { min-height: 50vh; padding: 3rem 1.5rem; }
-  .notice-board { margin: -1rem 1rem 2rem; padding: 1.5rem; }
+  .contact-bar { margin: -1rem 1rem 2rem; padding: 1rem 1.2rem; gap: 0.8rem; }
   .products-section { padding: 2rem 1rem 4rem; }
   .products-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem; }
   .dashboard { padding: 1rem; }
