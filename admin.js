@@ -104,6 +104,37 @@ logoutBtn.addEventListener('click', async () => {
   showToast('تم تسجيل الخروج');
 });
 
+// ========== PWA Install (Admin) ==========
+let adminDeferredPrompt = null;
+const adminInstallBtn = document.getElementById('admin-install-btn');
+const installedBadge  = document.getElementById('installed-badge');
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  adminDeferredPrompt = e;
+  if (adminInstallBtn) adminInstallBtn.style.display = 'inline-flex';
+});
+
+if (adminInstallBtn) {
+  adminInstallBtn.addEventListener('click', async () => {
+    if (!adminDeferredPrompt) return;
+    adminDeferredPrompt.prompt();
+    const { outcome } = await adminDeferredPrompt.userChoice;
+    adminDeferredPrompt = null;
+    if (outcome === 'accepted') {
+      adminInstallBtn.style.display = 'none';
+      if (installedBadge) installedBadge.style.display = 'inline-flex';
+      showToast('تم تثبيت التطبيق بنجاح ✓');
+    }
+  });
+}
+
+window.addEventListener('appinstalled', () => {
+  adminDeferredPrompt = null;
+  if (adminInstallBtn) adminInstallBtn.style.display = 'none';
+  if (installedBadge)  installedBadge.style.display  = 'inline-flex';
+});
+
 // ========== File Upload Area ==========
 uploadArea.addEventListener('click', () => fileInput.click());
 
