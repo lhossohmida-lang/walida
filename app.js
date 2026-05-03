@@ -65,11 +65,20 @@ async function loadProducts() {
           </div>
         </div>
       `;
-      // Touch support: toggle active on tap
+      // Click/tap: toggle overlay on mobile, open lightbox on double-tap or long hold
       card.addEventListener('touchstart', () => {
         document.querySelectorAll('.product-card.active').forEach(c => { if (c !== card) c.classList.remove('active'); });
         card.classList.toggle('active');
       }, { passive: true });
+
+      // Click on image opens lightbox
+      const img = card.querySelector('img');
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openLightbox(data.imageUrl, data.name || '');
+      });
+      img.style.cursor = 'zoom-in';
+
       grid.appendChild(card);
     });
 
@@ -98,6 +107,53 @@ async function loadProducts() {
       </div>`;
   }
 }
+
+// ========== Lightbox ==========
+const lightbox   = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
+
+function openLightbox(src, alt) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || '';
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { lightboxImg.src = ''; }, 300);
+}
+
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+lightboxClose.addEventListener('click', closeLightbox);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// ========== PWA Install ==========
+let deferredPrompt = null;
+const installBtn = document.getElementById('install-btn');
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  if (installBtn) installBtn.style.display = 'flex';
+});
+
+if (installBtn) {
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    installBtn.style.display = 'none';
+  });
+}
+
+window.addEventListener('appinstalled', () => {
+  if (installBtn) installBtn.style.display = 'none';
+  deferredPrompt = null;
+});
 
 // ========== Smooth Scroll for Nav ==========
 document.querySelectorAll('a[href^="#"]').forEach(link => {
