@@ -152,10 +152,9 @@ function handleFileSelect(file) {
 uploadBtn.addEventListener('click', async () => {
   const name = document.getElementById('dress-name').value.trim();
   const price = document.getElementById('dress-price').value.trim();
-  const desc = document.getElementById('dress-desc').value.trim();
 
-  if (!name || !price || !selectedFile) {
-    showToast('يرجى ملء الاسم والسعر واختيار صورة', 'error');
+  if (!selectedFile) {
+    showToast('يرجى اختيار صورة أولاً', 'error');
     return;
   }
 
@@ -198,9 +197,8 @@ uploadBtn.addEventListener('click', async () => {
 
     // 2. حفظ تفاصيل الفستان مع الصورة المضغوطة في Firebase Database
     await addDoc(collection(db, 'products'), {
-      name: name,
-      price: Number(price),
-      description: desc || '',
+      name: name || '',
+      price: price ? Number(price) : 0,
       imageUrl: compressedImage,
       imagePath: 'local-compressed',
       badge: '',
@@ -212,7 +210,6 @@ uploadBtn.addEventListener('click', async () => {
     // Reset form
     document.getElementById('dress-name').value = '';
     document.getElementById('dress-price').value = '';
-    document.getElementById('dress-desc').value = '';
     selectedFile = null;
     fileNameDisplay.textContent = '';
     imagePreview.style.display = 'none';

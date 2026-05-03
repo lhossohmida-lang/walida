@@ -508,6 +508,17 @@ img { max-width: 100%; display: block; }
 
 .form-input::placeholder { color: var(--text-muted); }
 
+.optional-tag {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: var(--surface);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 400;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
 .btn-primary {
   width: 100%;
   padding: 13px;
@@ -751,7 +762,7 @@ img { max-width: 100%; display: block; }
   .hero { min-height: 50vh; padding: 3rem 1.5rem; }
   .contact-bar { margin: -1rem 1rem 2rem; padding: 1rem 1.2rem; gap: 0.8rem; }
   .products-section { padding: 2rem 1rem 4rem; }
-  .products-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem; }
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .dashboard { padding: 1rem; }
   .form-row { grid-template-columns: 1fr; }
   .dash-header { flex-direction: column; align-items: flex-start; }
@@ -759,6 +770,6 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 480px) {
-  .products-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
   .stats-row { grid-template-columns: 1fr 1fr; }
 }

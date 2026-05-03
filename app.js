@@ -60,8 +60,8 @@ async function loadProducts() {
           <img src="${data.imageUrl}" alt="${data.name}" loading="lazy">
           ${data.badge ? `<span class="badge">${data.badge}</span>` : ''}
           <div class="card-overlay">
-            <h3>${data.name}</h3>
-            <div class="price">${formatPrice(data.price)} <small>دج</small></div>
+            ${data.name ? `<h3>${data.name}</h3>` : ''}
+            ${data.price ? `<div class="price">${formatPrice(data.price)} <small>دج</small></div>` : ''}
           </div>
         </div>
       `;
