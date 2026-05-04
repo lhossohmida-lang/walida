@@ -205,21 +205,28 @@ uploadBtn.addEventListener('click', async () => {
           const canvas = document.createElement('canvas');
           let width = img.width;
           let height = img.height;
-          
-          // تصغير الأبعاد لتخفيف الحجم (أقصى حجم 800 بكسل)
-          if (width > 800 || height > 800) {
-            const ratio = Math.min(800 / width, 800 / height);
-            width *= ratio;
-            height *= ratio;
+
+          // تصغير الأبعاد (أقصى 600 بكسل لضمان البقاء تحت حد Firestore 1MB)
+          const MAX = 600;
+          if (width > MAX || height > MAX) {
+            const ratio = Math.min(MAX / width, MAX / height);
+            width = Math.round(width * ratio);
+            height = Math.round(height * ratio);
           }
-          
+
           canvas.width = width;
           canvas.height = height;
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, 0, 0, width, height);
-          
-          // تحويل الصورة إلى JPEG مضغوط بنسبة 60%
-          resolve(canvas.toDataURL('image/jpeg', 0.6)); 
+
+          // ضغط تدريجي حتى تصبح الصورة < 800KB
+          let quality = 0.7;
+          let result = canvas.toDataURL('image/jpeg', quality);
+          while (result.length > 800 * 1024 && quality > 0.2) {
+            quality -= 0.1;
+            result = canvas.toDataURL('image/jpeg', quality);
+          }
+          resolve(result);
         };
         img.onerror = reject;
       };
