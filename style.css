@@ -570,6 +570,47 @@ img { max-width: 100%; display: block; }
 
 .btn-danger:hover { background: var(--primary-light); }
 
+.btn-store {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px;
+  background: transparent;
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+  font-family: var(--font-main);
+  text-align: center;
+}
+
+.btn-store:hover {
+  background: rgba(212, 168, 83, 0.1);
+  transform: translateY(-1px);
+}
+
+.login-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.login-actions .btn-primary { margin-top: 0; }
+
+.upload-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.upload-actions .btn-primary { flex: 1; margin-top: 0; }
+.upload-actions .btn-store { flex: 0 0 auto; padding: 13px 20px; }
+
 /* Dashboard Layout */
 .dashboard {
   max-width: 1200px;
