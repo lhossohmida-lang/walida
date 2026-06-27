@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="وليدة — بوتيك الفساتين التقليدية الجزائرية. اكتشفي أجمل الكاراكو والبدرون والبلوزة بلمسة عصرية أنيقة.">
+  <meta name="theme-color" content="#8b1a2b">
+  <title>وليدة | تصاميم رشمات وطراز أصيلة</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="وليدة — بوتيك الفساتين الجزائرية الأصيلة">
+  <meta property="og:description" content="كاراكو عاصمي، بدرون قسنطيني، بلوزة وهرانية — تصاميم راقية بلمسة عصرية.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="landing.css">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- ===== NAV DOTS ===== -->
+  <nav class="dot-nav" id="dotNav" aria-label="التنقل بين الأقسام">
+    <button class="dot active" data-index="0" title="الرئيسية" aria-label="القسم 1"></button>
+    <button class="dot" data-index="1" title="الكاراكو العاصمي" aria-label="القسم 2"></button>
+    <button class="dot" data-index="2" title="البدرون القسنطيني" aria-label="القسم 3"></button>
+    <button class="dot" data-index="3" title="البلوزة الوهرانية" aria-label="القسم 4"></button>
+    <button class="dot" data-index="4" title="تشكيلة 2026" aria-label="القسم 5"></button>
+    <button class="dot" data-index="5" title="تواصل معنا" aria-label="القسم 6"></button>
+  </nav>
+
+  <!-- ===== SCROLL ARROW ===== -->
+  <button class="scroll-arrow" id="scrollArrow" aria-label="القسم التالي">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </button>
+
+  <!-- ===== PROGRESS BAR ===== -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ===== MAIN SCROLLER ===== -->
+  <main class="scroller" id="scroller">
+
+    <!-- ── SECTION 0: HERO ── -->
+    <section class="panel panel--hero" id="panel-0" data-index="0">
+      <div class="panel__video-wrap">
+        <video class="panel__video" id="video-0" autoplay muted loop playsinline
+          poster="hero-desktop.jpg">
+          <source src="videos/video-0.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="panel__overlay"></div>
+
+      <div class="panel__content hero-content">
+        <div class="hero-brand">
+          <img src="icons/icon.svg" alt="وليدة" class="hero-logo" width="64" height="64">
+          <span class="hero-logo-text">وليدة</span>
+        </div>
+
+        <div class="badge animate-fade-up" style="--delay:.1s">✨ تشكيلة 2026</div>
+        <h1 class="hero-title animate-fade-up" style="--delay:.25s">
+          الأناقة الجزائرية<br>
+          <span class="highlight">في أبهى صورها</span>
+        </h1>
+        <p class="hero-sub animate-fade-up" style="--delay:.4s">
+          فساتين تقليدية أصيلة — رشمات وطراز يدوي بلمسة عصرية
+        </p>
+
+        <div class="hero-actions animate-fade-up" style="--delay:.55s">
+          <button class="btn-primary" id="heroCtaBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+              fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            ابدأ المشاهدة
+          </button>
+          <a href="index.html" class="btn-ghost">دخول المتجر</a>
+        </div>
+
+        <div class="scroll-hint animate-fade-up" style="--delay:.75s">
+          <span>مرّري للأسفل لاكتشاف المزيد</span>
+          <div class="scroll-hint-line"></div>
+        </div>
+      </div>
+
+      <div class="panel__counter">
+        <span class="counter-num">01</span>
+        <div class="counter-line"></div>
+        <span class="counter-total">06</span>
+      </div>
+    </section>
+
+    <!-- ── SECTION 1: كاراكو عاصمي ── -->
+    <section class="panel" id="panel-1" data-index="1">
+      <div class="panel__video-wrap">
+        <video class="panel__video" id="video-1" muted loop playsinline>
+          <source src="videos/video-1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="panel__overlay panel__overlay--right"></div>
+
+      <div class="panel__content content--left">
+        <div class="content-tag">01 — الجزائر العاصمة</div>
+        <h2 class="content-title">الكاراكو<br><em>العاصمي</em></h2>
+        <div class="content-divider"></div>
+        <p class="content-desc">
+          تحفة الفن الأندلسي المنسوجة في قلب الجزائر العاصمة. ثوب ملوكي مطرّز بالذهب
+          والفضة، يحمل عبق القرون ويتنفس روح الحداثة.
+        </p>
+        <ul class="content-features">
+          <li>✦ تطريز يدوي بخيوط الذهب والفضة</li>
+          <li>✦ أقمشة من الحرير الطبيعي والمخمل</li>
+          <li>✦ تفصيل حسب المقاس</li>
+        </ul>
+        <button class="btn-outline" onclick="window.location='index.html'">اطلبي قطعتك</button>
+      </div>
+
+      <div class="panel__counter">
+        <span class="counter-num">02</span>
+        <div class="counter-line"></div>
+        <span class="counter-total">06</span>
+      </div>
+    </section>
+
+    <!-- ── SECTION 2: بدرون قسنطيني ── -->
+    <section class="panel" id="panel-2" data-index="2">
+      <div class="panel__video-wrap">
+        <video class="panel__video" id="video-2" muted loop playsinline>
+          <source src="videos/video-2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="panel__overlay panel__overlay--left"></div>
+
+      <div class="panel__content content--right">
+        <div class="content-tag">02 — قسنطينة</div>
+        <h2 class="content-title">البدرون<br><em>القسنطيني</em></h2>
+        <div class="content-divider"></div>
+        <p class="content-desc">
+          من مدينة الجسور المعلّقة، يأتي البدرون القسنطيني بنقوشه الأصيلة وألوانه الجريئة
+          التي تعكس فخر وعراقة الشرق الجزائري.
+        </p>
+        <ul class="content-features">
+          <li>✦ نقوش هندسية تقليدية</li>
+          <li>✦ ألوان زاهية وعميقة</li>
+          <li>✦ زخرفة مخمل بارز</li>
+        </ul>
+        <button class="btn-outline" onclick="window.location='index.html'">اطلبي قطعتك</button>
+      </div>
+
+      <div class="panel__counter">
+        <span class="counter-num">03</span>
+        <div class="counter-line"></div>
+        <span class="counter-total">06</span>
+      </div>
+    </section>
+
+    <!-- ── SECTION 3: بلوزة وهرانية ── -->
+    <section class="panel" id="panel-3" data-index="3">
+      <div class="panel__video-wrap">
+        <video class="panel__video" id="video-3" muted loop playsinline>
+          <source src="videos/video-3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="panel__overlay panel__overlay--right"></div>
+
+      <div class="panel__content content--left">
+        <div class="content-tag">03 — وهران</div>
+        <h2 class="content-title">البلوزة<br><em>الوهرانية</em></h2>
+        <div class="content-divider"></div>
+        <p class="content-desc">
+          تجسّد روح الغرب الجزائري المنفتح — بلوزة وهرانية بتطريزات فاخرة تمزج الأصالة
+          بالمعاصرة في تناسق مثالي.
+        </p>
+        <ul class="content-features">
+          <li>✦ تطريز فيتراج أندلسي</li>
+          <li>✦ أقمشة خفيفة وفاخرة</li>
+          <li>✦ تصاميم عصرية بروح تقليدية</li>
+        </ul>
+        <button class="btn-outline" onclick="window.location='index.html'">اطلبي قطعتك</button>
+      </div>
+
+      <div class="panel__counter">
+        <span class="counter-num">04</span>
+        <div class="counter-line"></div>
+        <span class="counter-total">06</span>
+      </div>
+    </section>
+
+    <!-- ── SECTION 4: تشكيلة 2026 ── -->
+    <section class="panel panel--gold" id="panel-4" data-index="4">
+      <div class="panel__video-wrap">
+        <video class="panel__video" id="video-4" muted loop playsinline>
+          <source src="videos/video-4.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="panel__overlay panel__overlay--center"></div>
+
+      <div class="panel__content content--center">
+        <div class="content-tag">04 — حصري 2026</div>
+        <h2 class="content-title center-title">التشكيلة<br><em>الجديدة 2026</em></h2>
+        <div class="content-divider center-divider"></div>
+        <p class="content-desc center-desc">
+          أحدث إبداعات بوتيك وليدة — قطع حصرية بتصاميم لم تُشاهَد من قبل،
+          تجمع بين التراث الجزائري الأصيل والذوق الراقي المعاصر.
+        </p>
+        <div class="center-actions">
+          <a href="index.html" class="btn-primary-gold">اكتشفي التشكيلة الكاملة</a>
+          <a href="https://www.facebook.com/biba.broderie.dessin" target="_blank" rel="noopener"
+            class="btn-facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            تواصلي معنا
+          </a>
+        </div>
+      </div>
+
+      <div class="panel__counter">
+        <span class="counter-num">05</span>
+        <div class="counter-line"></div>
+        <span class="counter-total">06</span>
+      </div>
+    </section>
+
+    <!-- ── SECTION 5: FOOTER CTA ── -->
+    <section class="panel panel--footer" id="panel-5" data-index="5">
+      <div class="panel__video-wrap">
+        <video class="panel__video" id="video-5" muted loop playsinline>
+          <source src="videos/video-5.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="footer-bg-pattern"></div>
+      <div class="panel__overlay panel__overlay--footer"></div>
+
+      <div class="panel__content content--center footer-cta-content">
+        <img src="icons/icon.svg" alt="وليدة" class="footer-logo" width="80" height="80">
+        <h2 class="footer-brand-text">Walida ✦ وليدة</h2>
+        <p class="footer-tagline">تصاميم رشمات وطراز أصيلة منذ 2020</p>
+
+        <div class="footer-divider"></div>
+
+        <p class="footer-invite">
+          هل أثارت أنوثتكِ تشكيلتنا؟<br>
+          تواصلي معنا لإتمام طلبيتك أو زورينا في البوتيك
+        </p>
+
+        <div class="footer-actions">
+          <a href="https://www.facebook.com/biba.broderie.dessin" target="_blank" rel="noopener"
+            class="footer-fb-btn" id="footerFbBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            تواصل عبر فيسبوك
+          </a>
+          <a href="index.html" class="footer-shop-btn">دخول المتجر</a>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 بوتيك وليدة — جميع الحقوق محفوظة</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/biba.broderie.dessin" target="_blank" rel="noopener"
+              aria-label="فيسبوك">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel__counter">
+        <span class="counter-num">06</span>
+        <div class="counter-line"></div>
+        <span class="counter-total">06</span>
+      </div>
+    </section>
+
+  </main><!-- /.scroller -->
+
+  <script src="landing.js"></script>
+</body>
+</html>
